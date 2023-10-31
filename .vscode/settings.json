@@ -1,0 +1,12 @@
+{
+    "prettier.tabWidth": 4,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.insertPragma": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.configPath": "./.prettierrc",
+    "prettier.requireConfig": true,
+    "prettier.singleAttributePerLine": true,
+    "prettier.singleQuote": true,
+    "prettier.useTabs": true,
+    "editor.formatOnSave": true
+}
