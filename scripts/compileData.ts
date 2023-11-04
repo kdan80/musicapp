@@ -1,22 +1,38 @@
+// A script for setting up data in lieu of a database
+
+import fs from 'fs'
+import util from 'util'
+import { nanoid } from 'nanoid'
+import dotenv from 'dotenv'
+
+dotenv.config() // Load environment variables from .env file
+
 interface track {
     title: string
     duration: number
     track_number: number
     filename: string
-    id: number
+    id: string
 }
 
 interface album {
-    id: number
+    id: string
     title: string
     artist: string
     path: string
     track_list: track[]
 }
 
-// Aim/Cold Water Music/01 - Intro.mp3
+interface song {
+    id: string
+    path: string
+}
 
-const albums: album[] = [
+const projectRoot = process.env.PROJECT_DIR
+const albumsDir = 'src'
+const songsDir = 'src/app/api'
+
+const albumsRaw: album[] = [
     {
         id: 1,
         title: 'Cold Water Music',
@@ -4766,4 +4782,42 @@ const albums: album[] = [
     },
 ]
 
-export default albums
+const songsRaw: song[] = []
+
+for (let i = 0; i < albumsRaw.length; i++) {
+    albumsRaw[i].id = nanoid()
+
+    const song = { id: '', path: '' }
+    const album = albumsRaw[i]
+    const track_list = albumsRaw[i].track_list
+    for (let j = 0; j < track_list.length; j++) {
+        track_list[j].id = nanoid()
+        song.id = track_list[j].id
+        song.path = `${album.path}/${track_list[j].filename}`
+    }
+
+    songsRaw.push(song)
+    albumsRaw[i].track_list = track_list
+}
+
+// Create the albums "database"
+const albums = util.inspect(albumsRaw, { depth: 3 })
+const albumsText = `const albums = ${albums}\n\nexport default albums`
+fs.writeFile(`${projectRoot}/${albumsDir}/albums.ts`, albumsText, 'utf8', error => {
+    if (error) {
+        console.log(error)
+    } else {
+        console.log('albums file created')
+    }
+})
+
+// Create the songs "database"
+const songs = util.inspect(songsRaw, { depth: 3 })
+const songsText = `const songs = ${songs}\n\nexport default songs`
+fs.writeFile(`${projectRoot}/${songsDir}/songs.ts`, songsText, 'utf8', error => {
+    if (error) {
+        console.log(error)
+    } else {
+        console.log('songs file created')
+    }
+})

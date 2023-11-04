@@ -8,5 +8,6 @@
     "prettier.singleAttributePerLine": true,
     "prettier.singleQuote": true,
     "prettier.useTabs": true,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false
 }
