@@ -1,5 +1,6 @@
 const albums = [
   {
+    id: '633c6a65f301d2141193cc28',
     title: 'Cold Water Music',
     artist: 'Aim',
     path: 'Aim/Cold Water Music',
@@ -91,6 +92,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6ac6f301d2141193cc45',
     title: 'Hinterland',
     artist: 'Aim',
     path: 'Aim/Hinterland',
@@ -189,6 +191,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6b25f301d2141193cc64',
     title: '10 000 Hz Legend',
     artist: 'Air',
     path: 'Air/10 000 Hz Legend',
@@ -273,6 +276,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6b37f301d2141193cc7f',
     title: 'Love 2',
     artist: 'Air',
     path: 'Air/Love 2',
@@ -364,6 +368,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6b4af301d2141193cc9c',
     title: 'Moon Safari',
     artist: 'Air',
     path: 'Air/Moon Safari',
@@ -441,6 +446,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6b7bf301d2141193ccd2',
     title: 'Premiers Symptomes',
     artist: 'Air',
     path: 'Air/Premiers Symptomes',
@@ -497,6 +503,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6b55f301d2141193ccb5',
     title: 'Pocket Symphony',
     artist: 'Air',
     path: 'Air/Pocket Symphony',
@@ -588,6 +595,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6ba5f301d2141193ccfe',
     title: 'The Virgin Suicides',
     artist: 'Air',
     path: 'Air/The Virgin Suicides',
@@ -686,6 +694,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6b98f301d2141193cce5',
     title: 'Talkie Walkie',
     artist: 'Air',
     path: 'Air/Talkie Walkie',
@@ -763,6 +772,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6c0ff301d2141193cd40',
     title: 'Jagged Little Pill',
     artist: 'Alanis Morissette',
     path: 'Alanis Morissette/Jagged Little Pill',
@@ -854,6 +864,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6c6df301d2141193cd93',
     title: 'Trailer',
     artist: 'Ash',
     path: 'Ash/Trailer',
@@ -910,6 +921,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6bd6f301d2141193cd1d',
     title: 'Different World',
     artist: 'Alan Walker',
     path: 'Alan Walker/Different World',
@@ -1022,6 +1034,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6c7bf301d2141193cda6',
     title: 'Vehicles & Animals',
     artist: 'Athlete',
     path: 'Athlete/Vehicles & Animals',
@@ -1113,6 +1126,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6c64f301d2141193cd76',
     title: '1977',
     artist: 'Ash',
     path: 'Ash/1977',
@@ -1204,6 +1218,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6cd5f301d2141193ce31',
     title: 'I Created Disco',
     artist: 'Calvin Harris',
     path: 'Calvin Harris/I Created Disco',
@@ -1309,6 +1324,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6cdff301d2141193ce52',
     title: 'Motion',
     artist: 'Calvin Harris',
     path: 'Calvin Harris/Motion',
@@ -1421,6 +1437,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6cf9f301d2141193ce96',
     title: 'A Rush of Blood to the Head',
     artist: 'Coldplay',
     path: 'Coldplay/A Rush of Blood to the Head',
@@ -1505,6 +1522,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6ceaf301d2141193ce75',
     title: 'Ready for the Weekend',
     artist: 'Calvin Harris',
     path: 'Calvin Harris/Ready for the Weekend',
@@ -1610,6 +1628,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d03f301d2141193ceb1',
     title: 'Ghost Stories',
     artist: 'Coldplay',
     path: 'Coldplay/Ghost Stories',
@@ -1701,6 +1720,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d16f301d2141193ceef',
     title: 'Parachutes',
     artist: 'Coldplay',
     path: 'Coldplay/Parachutes',
@@ -1778,6 +1798,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6cc9f301d2141193ce00',
     title: '18 Months',
     artist: 'Calvin Harris',
     path: 'Calvin Harris/18 Months',
@@ -1939,6 +1960,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d21f301d2141193cf08',
     title: 'Viva la Vida or Death and All His Friends',
     artist: 'Coldplay',
     path: 'Coldplay/Viva la Vida or Death and All His Friends',
@@ -2016,6 +2038,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d7ff301d2141193cf85',
     title: 'Discovery',
     artist: 'Daft Punk',
     path: 'Daft Punk/Discovery',
@@ -2121,6 +2144,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d8df301d2141193cfa6',
     title: 'Homework',
     artist: 'Daft Punk',
     path: 'Daft Punk/Homework',
@@ -2240,6 +2264,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d0cf301d2141193cece',
     title: 'Mylo Xyloto',
     artist: 'Coldplay',
     path: 'Coldplay/Mylo Xyloto',
@@ -2345,6 +2370,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6da5f301d2141193cfe4',
     title: 'Heroes',
     artist: 'David Bowie',
     path: 'David Bowie/Heroes',
@@ -2436,6 +2462,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6db1f301d2141193d001',
     title: 'Hunky Dory',
     artist: 'David Bowie',
     path: 'David Bowie/Hunky Dory',
@@ -2548,6 +2575,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d72f301d2141193cf40',
     title: 'The Very Very Best Of Crowded House',
     artist: 'Crowded House',
     path: 'Crowded House/The Very Very Best Of Crowded House',
@@ -2779,6 +2807,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6dccf301d2141193d049',
     title: 'Disgraceful',
     artist: 'Dubstar',
     path: 'Dubstar/Disgraceful',
@@ -2863,6 +2892,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d31f301d2141193cf21',
     title: 'X&Y',
     artist: 'Coldplay',
     path: 'Coldplay/X&Y',
@@ -2961,6 +2991,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6d99f301d2141193cfcb',
     title: 'Aladdin Sane',
     artist: 'David Bowie',
     path: 'David Bowie/Aladdin Sane',
@@ -3038,6 +3069,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6de7f301d2141193d087',
     title: 'Elastica',
     artist: 'Elastica',
     path: 'Elastica/Elastica',
@@ -3157,6 +3189,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6df3f301d2141193d0ac',
     title: 'Polythene',
     artist: 'Feeder',
     path: 'Feeder/Polythene',
@@ -3255,6 +3288,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6e2af301d2141193d153',
     title: 'Franz Ferdinand',
     artist: 'Franz Ferdinand',
     path: 'Franz Ferdinand/Franz Ferdinand',
@@ -3332,6 +3366,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6e34f301d2141193d16c',
     title: 'You Could Have It So Much Better',
     artist: 'Franz Ferdinand',
     path: 'Franz Ferdinand/You Could Have It So Much Better',
@@ -3430,6 +3465,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6e4df301d2141193d1a6',
     title: 'Garbage',
     artist: 'Garbage',
     path: 'Garbage/Garbage',
@@ -3521,6 +3557,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6e41f301d2141193d18b',
     title: 'Details',
     artist: 'Frou Frou',
     path: 'Frou Frou/Details',
@@ -3605,6 +3642,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6dd7f301d2141193d064',
     title: 'Goodbye',
     artist: 'Dubstar',
     path: 'Dubstar/Goodbye',
@@ -3717,6 +3755,7 @@ const albums = [
     ]
   },
   {
+    id: '633c70fff301d2141193d23b',
     title: 'Harry Styles',
     artist: 'Harry Styles',
     path: 'Harry Styles/Harry Styles',
@@ -3794,6 +3833,7 @@ const albums = [
     ]
   },
   {
+    id: '633c70e9f301d2141193d205',
     title: 'Black Cherry',
     artist: 'Goldfrapp',
     path: 'Goldfrapp/Black Cherry',
@@ -3871,6 +3911,7 @@ const albums = [
     ]
   },
   {
+    id: '633c6e66f301d2141193d1e0',
     title: 'Wanted on Voyage',
     artist: 'George Ezra',
     path: 'George Ezra/Wanted on Voyage',
@@ -3990,6 +4031,7 @@ const albums = [
     ]
   },
   {
+    id: '633c71ecf301d2141193d27f',
     title: 'The Best Of The Housemartins',
     artist: 'The Housemartins',
     path: 'Housemartins/Best Of The Housemartins',
@@ -4095,6 +4137,7 @@ const albums = [
     ]
   },
   {
+    id: '633c71f9f301d2141193d2a0',
     title: '100 Broken Windows',
     artist: 'Idlewild',
     path: 'Idlewild/100 Broken Windows',
@@ -4179,6 +4222,7 @@ const albums = [
     ]
   },
   {
+    id: '633c716df301d2141193d256',
     title: "These Dreams Heart's Greatest Hits",
     artist: 'Heart',
     path: "Heart/These Dreams Heart's Greatest Hits",
@@ -4305,6 +4349,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7203f301d2141193d2bc',
     title: 'Hope Is Important',
     artist: 'Idlewild',
     path: 'Idlewild/Hope Is important',
@@ -4396,6 +4441,7 @@ const albums = [
     ]
   },
   {
+    id: '633c720ef301d2141193d2d9',
     title: 'Make Yourself',
     artist: 'Incubus',
     path: 'Incubus/Make Yourself',
@@ -4494,6 +4540,7 @@ const albums = [
     ]
   },
   {
+    id: '633c721ef301d2141193d2f8',
     title: 'The Best Of',
     artist: 'James',
     path: 'James/The Best of James',
@@ -4627,6 +4674,7 @@ const albums = [
     ]
   },
   {
+    id: '633c724bf301d2141193d37b',
     title: 'Imagine',
     artist: 'John Lennon',
     path: 'John Lennon/Imagine',
@@ -4704,6 +4752,7 @@ const albums = [
     ]
   },
   {
+    id: '633c722df301d2141193d321',
     title: 'I Cry When I Laugh',
     artist: 'Jess Glynne',
     path: 'Jess Glynne/I Cry When I Laugh',
@@ -4851,6 +4900,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7286f301d2141193d3c1',
     title: 'Empire',
     artist: 'Kasabian',
     path: 'Kasabian/Empire (2006)',
@@ -4949,6 +4999,7 @@ const albums = [
     ]
   },
   {
+    id: '633c723cf301d2141193d34e',
     title: 'Experience Hendrix The Best Of Jimi Hendrix',
     artist: 'Jimi Hendrix',
     path: 'Jimi Hendrix/Experience Hendrix The Best Of Jimi Hendrix',
@@ -5096,6 +5147,7 @@ const albums = [
     ]
   },
   {
+    id: '633c725bf301d2141193d394',
     title: 'Lennon Legend',
     artist: 'John Lennon',
     path: 'John Lennon/Lennon Legend',
@@ -5243,6 +5295,7 @@ const albums = [
     ]
   },
   {
+    id: '633c728ff301d2141193d3e0',
     title: 'Kasabian',
     artist: 'Kasabian',
     path: 'Kasabian/Kasabian (2004)',
@@ -5348,6 +5401,7 @@ const albums = [
     ]
   },
   {
+    id: '633c72abf301d2141193d42e',
     title: 'Leftism',
     artist: 'Leftfield',
     path: 'Leftfield/Leftism',
@@ -5432,6 +5486,7 @@ const albums = [
     ]
   },
   {
+    id: '633c732df301d2141193d47c',
     title: 'Ray of Light',
     artist: 'Madonna',
     path: 'Madonna/Ray of light',
@@ -5530,6 +5585,7 @@ const albums = [
     ]
   },
   {
+    id: '633c735af301d2141193d4e1',
     title: 'Gold Against the Soul',
     artist: 'Manic Street Preachers',
     path: 'Manic Street Preachers/Gold Against The Soul',
@@ -5607,6 +5663,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7345f301d2141193d49b',
     title: 'Everything Must Go',
     artist: 'Manic Street Preachers',
     path: 'Manic Street Preachers/Everything Must Go',
@@ -5698,6 +5755,7 @@ const albums = [
     ]
   },
   {
+    id: '633c731ef301d2141193d449',
     title: 'The Heavy Heavy Hits',
     artist: 'Madness',
     path: 'Madness/The Heavy Heavy Hits',
@@ -5866,6 +5924,7 @@ const albums = [
     ]
   },
   {
+    id: '633c729ef301d2141193d401',
     title: 'The Best Of Keane',
     artist: 'Keane',
     path: 'Keane/The Best Of Keane',
@@ -6013,6 +6072,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7350f301d2141193d4b8',
     title: 'Generation Terrorists',
     artist: 'Manic Street Preachers',
     path: 'Manic Street Preachers/Generation Terrorists',
@@ -6146,6 +6206,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7364f301d2141193d4fa',
     title: 'The Holy Bible',
     artist: 'Manic Street Preachers',
     path: 'Manic Street Preachers/The Holy Bible',
@@ -6244,6 +6305,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7388f301d2141193d55d',
     title: 'Black Holes and Revelations',
     artist: 'Muse',
     path: 'Muse/Black Holes And Revelations',
@@ -6328,6 +6390,7 @@ const albums = [
     ]
   },
   {
+    id: '633c739cf301d2141193d593',
     title: 'Showbiz',
     artist: 'Muse',
     path: 'Muse/Showbiz',
@@ -6419,6 +6482,7 @@ const albums = [
     ]
   },
   {
+    id: '633c737ef301d2141193d53c',
     title: 'Absolution',
     artist: 'Muse',
     path: 'Muse/Absolution',
@@ -6524,6 +6588,7 @@ const albums = [
     ]
   },
   {
+    id: '633c73a8f301d2141193d5b0',
     title: 'In Utero',
     artist: 'Nirvana',
     path: 'Nirvana/In Utero',
@@ -6615,6 +6680,7 @@ const albums = [
     ]
   },
   {
+    id: '633c73b2f301d2141193d5cd',
     title: 'Nevermind',
     artist: 'Nirvana',
     path: 'Nirvana/Nevermind',
@@ -6706,6 +6772,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7371f301d2141193d519',
     title: 'This Is My Truth Tell Me Yours',
     artist: 'Manic Street Preachers',
     path: 'Manic Street Preachers/This Is My Truth Tell Me Yours',
@@ -6818,6 +6885,7 @@ const albums = [
     ]
   },
   {
+    id: '633c75dff301d2141193d61d',
     title: 'Be Here Now',
     artist: 'Oasis',
     path: 'Oasis/Be Here Now',
@@ -6909,6 +6977,7 @@ const albums = [
     ]
   },
   {
+    id: '633c75e9f301d2141193d63a',
     title: 'Definitely Maybe',
     artist: 'Oasis',
     path: 'Oasis/Definitely Maybe',
@@ -6993,6 +7062,7 @@ const albums = [
     ]
   },
   {
+    id: '633c75f3f301d2141193d655',
     title: 'The Masterplan',
     artist: 'Oasis',
     path: 'Oasis/The Masterplan',
@@ -7098,6 +7168,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7391f301d2141193d578',
     title: 'Origin of Symmetry',
     artist: 'Muse',
     path: 'Muse/Origin Of Symmetry',
@@ -7182,6 +7253,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7618f301d2141193d6b0',
     title: 'Different Class',
     artist: 'Pulp',
     path: 'Pulp/Different Class',
@@ -7273,6 +7345,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7628f301d2141193d6cd',
     title: 'A Day at the Races',
     artist: 'Queen',
     path: 'Queen/A Day at the Races',
@@ -7350,6 +7423,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7602f301d2141193d676',
     title: 'Moseley Shoals',
     artist: 'Ocean Colour Scene',
     path: 'Ocean Colour Scene/Moseley Shoals',
@@ -7441,6 +7515,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7631f301d2141193d6e6',
     title: 'A Kind of Magic',
     artist: 'Queen',
     path: 'Queen/A Kind Of Magic',
@@ -7532,6 +7607,7 @@ const albums = [
     ]
   },
   {
+    id: '633c760bf301d2141193d693',
     title: 'One From the Modern',
     artist: 'Ocean Colour Scene',
     path: 'Ocean Colour Scene/One From The Modern',
@@ -7623,6 +7699,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7644f301d2141193d720',
     title: 'Jazz',
     artist: 'Queen',
     path: 'Queen/Jazz',
@@ -7721,6 +7798,7 @@ const albums = [
     ]
   },
   {
+    id: '633c763af301d2141193d703',
     title: 'A Night at the Opera',
     artist: 'Queen',
     path: 'Queen/A Night at the Opera',
@@ -7812,6 +7890,7 @@ const albums = [
     ]
   },
   {
+    id: '633c764ff301d2141193d73f',
     title: 'News of the World',
     artist: 'Queen',
     path: 'Queen/News Of The World',
@@ -7896,6 +7975,7 @@ const albums = [
     ]
   },
   {
+    id: '633c778df301d2141193d792',
     title: 'Kid A',
     artist: 'Radiohead',
     path: 'Radiohead/Kid A',
@@ -7980,6 +8060,7 @@ const albums = [
     ]
   },
   {
+    id: '633c77a1f301d2141193d7ca',
     title: 'Pablo Honey',
     artist: 'Radiohead',
     path: 'Radiohead/Pablo Honey',
@@ -8071,6 +8152,7 @@ const albums = [
     ]
   },
   {
+    id: '633c77a9f301d2141193d7e7',
     title: 'The Bends',
     artist: 'Radiohead',
     path: 'Radiohead/The Bends',
@@ -8162,6 +8244,7 @@ const albums = [
     ]
   },
   {
+    id: '633c77c2f301d2141193d827',
     title: 'Alone With Everybody',
     artist: 'Richard Ashcroft',
     path: 'Richard Ashcroft/Alone with Everybody',
@@ -8246,6 +8329,7 @@ const albums = [
     ]
   },
   {
+    id: '633c77b6f301d2141193d804',
     title: 'Californication',
     artist: 'Red Hot Chili Peppers',
     path: 'Red Hot Chili Peppers/Californication',
@@ -8358,6 +8442,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7797f301d2141193d7ad',
     title: 'OK Computer',
     artist: 'Radiohead',
     path: 'Radiohead/OK Computer',
@@ -8449,6 +8534,7 @@ const albums = [
     ]
   },
   {
+    id: '633c77d8f301d2141193d85d',
     title: 'Foxbase Alpha',
     artist: 'Saint Etienne',
     path: 'Saint Etienne/Foxbase Alpha',
@@ -8561,6 +8647,7 @@ const albums = [
     ]
   },
   {
+    id: '633c77ccf301d2141193d842',
     title: 'Under the Blacklight',
     artist: 'Rilo Kiley',
     path: 'Rilo Kiley/Under the Blacklight',
@@ -8645,6 +8732,7 @@ const albums = [
     ]
   },
   {
+    id: '633c77e6f301d2141193d880',
     title: 'Come On Over',
     artist: 'Shania Twain',
     path: 'Shania Twain/Come On Over',
@@ -8764,6 +8852,7 @@ const albums = [
     ]
   },
   {
+    id: '633c780df301d2141193d8f5',
     title: 'Final Straw',
     artist: 'Snow Patrol',
     path: 'Snow Patrol/Final Straw',
@@ -8869,6 +8958,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7801f301d2141193d8ca',
     title: 'The Greatest Hits',
     artist: 'Simply Red',
     path: 'Simply Red/Greatest Hits',
@@ -9009,6 +9099,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7826f301d2141193d916',
     title: 'Performance and Cocktails',
     artist: 'Stereophonics',
     path: 'Stereophonics/Performance and Cocktails',
@@ -9107,6 +9198,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7830f301d2141193d935',
     title: 'Word Gets Around',
     artist: 'Stereophonics',
     path: 'Stereophonics/Word Gets Around',
@@ -9198,6 +9290,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7844f301d2141193d96f',
     title: 'The Stone Roses',
     artist: 'The Stone Roses',
     path: 'Stone Roses/The Stone Roses',
@@ -9282,6 +9375,7 @@ const albums = [
     ]
   },
   {
+    id: '633c785ef301d2141193d9a3',
     title: 'Crime of the Century',
     artist: 'Supertramp',
     path: 'Supertramp/Crime of the Century',
@@ -9345,6 +9439,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7851f301d2141193d98a',
     title: 'Breakfast in America',
     artist: 'Supertramp',
     path: 'Supertramp/Breakfast in America',
@@ -9422,6 +9517,7 @@ const albums = [
     ]
   },
   {
+    id: '633c783bf301d2141193d952',
     title: 'Second Coming',
     artist: 'The Stone Roses',
     path: 'Stone Roses/Second Coming',
@@ -9513,6 +9609,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7874f301d2141193d9cb',
     title: 'The Essential Collection',
     artist: 'T Rex',
     path: 'T Rex/The Essential Collection',
@@ -9639,6 +9736,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7882f301d2141193d9f2',
     title: 'Since I Left You',
     artist: 'The Avalanches',
     path: 'The Avalanches/Since I Left You',
@@ -9772,6 +9870,7 @@ const albums = [
     ]
   },
   {
+    id: '633c78a1f301d2141193da61',
     title: 'Beatles for Sale',
     artist: 'The Beatles',
     path: 'The Beatles/Beatles For Sale',
@@ -9877,6 +9976,7 @@ const albums = [
     ]
   },
   {
+    id: '633c78aaf301d2141193da82',
     title: 'Help!',
     artist: 'The Beatles',
     path: 'The Beatles/Help!',
@@ -9982,6 +10082,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7897f301d2141193da3a',
     title: 'Abbey Road',
     artist: 'The Beatles',
     path: 'The Beatles/Abbey Road',
@@ -10108,6 +10209,7 @@ const albums = [
     ]
   },
   {
+    id: '633c78bdf301d2141193dac0',
     title: 'Please Please Me',
     artist: 'The Beatles',
     path: 'The Beatles/Please Please Me',
@@ -10213,6 +10315,7 @@ const albums = [
     ]
   },
   {
+    id: '633c78b3f301d2141193daa3',
     title: 'Let It Be',
     artist: 'The Beatles',
     path: 'The Beatles/Let It Be',
@@ -10304,6 +10407,7 @@ const albums = [
     ]
   },
   {
+    id: '633c78c8f301d2141193dae1',
     title: 'Revolver',
     artist: 'The Beatles',
     path: 'The Beatles/Revolver',
@@ -10409,6 +10513,7 @@ const albums = [
     ]
   },
   {
+    id: '633c788df301d2141193da1b',
     title: 'A Hard Days Night',
     artist: 'The Beatles',
     path: 'The Beatles/A Hard Days Night',
@@ -10507,6 +10612,7 @@ const albums = [
     ]
   },
   {
+    id: '633c78f3f301d2141193db63',
     title: 'Yellow Submarine',
     artist: 'The Beatles',
     path: 'The Beatles/Yellow Submarine',
@@ -10605,6 +10711,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7988f301d2141193db9d',
     title: 'Surrender',
     artist: 'The Chemical Brothers',
     path: 'The Chemical Brothers/Surrender',
@@ -10689,6 +10796,7 @@ const albums = [
     ]
   },
   {
+    id: '633c78e8f301d2141193db42',
     title: 'With the Beatles',
     artist: 'The Beatles',
     path: 'The Beatles/With The Beatles',
@@ -10794,6 +10902,7 @@ const albums = [
     ]
   },
   {
+    id: '633c797ff301d2141193db82',
     title: 'Dig Your Own Hole',
     artist: 'The Chemical Brothers',
     path: 'The Chemical Brothers/Dig Your Own Hole',
@@ -10878,6 +10987,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7999f301d2141193dbb8',
     title: 'Forgiven, Not Forgotten',
     artist: 'The Corrs',
     path: 'The Corrs/Forgiven, Not Forgotten',
@@ -10990,6 +11100,7 @@ const albums = [
     ]
   },
   {
+    id: '633c78d2f301d2141193db02',
     title: 'Rubber Soul',
     artist: 'The Beatles',
     path: 'The Beatles/Rubber Soul',
@@ -11095,6 +11206,7 @@ const albums = [
     ]
   },
   {
+    id: '633c79a4f301d2141193dbdb',
     title: 'Talk on Corners',
     artist: 'The Corrs',
     path: 'The Corrs/Talk on Corners',
@@ -11207,6 +11319,7 @@ const albums = [
     ]
   },
   {
+    id: '633c79c5f301d2141193dc1b',
     title: 'No Need to Argue',
     artist: 'The Cranberries',
     path: 'The Cranberries/No Need To Arque',
@@ -11305,6 +11418,7 @@ const albums = [
     ]
   },
   {
+    id: '633c79cff301d2141193dc3a',
     title: 'To the Faithful Departed',
     artist: 'The Cranberries',
     path: 'The Cranberries/To the Faithful Departed',
@@ -11403,6 +11517,7 @@ const albums = [
     ]
   },
   {
+    id: '633c79f7f301d2141193dc9d',
     title: 'Keep on Your Mean Side',
     artist: 'The Kills',
     path: 'The Kills/Keep On Your Mean Side',
@@ -11494,6 +11609,7 @@ const albums = [
     ]
   },
   {
+    id: '633c79eef301d2141193dc82',
     title: 'Blood Pressures',
     artist: 'The Kills',
     path: 'The Kills/Blood Pressures',
@@ -11578,6 +11694,7 @@ const albums = [
     ]
   },
   {
+    id: '633c79fff301d2141193dcba',
     title: 'Midnight Boom',
     artist: 'The Kills',
     path: 'The Kills/Midnight Boom',
@@ -11669,6 +11786,7 @@ const albums = [
     ]
   },
   {
+    id: '633c79aff301d2141193dbfe',
     title: 'Everybody Else Is Doing It, So Why Can’t We?',
     artist: 'The Cranberries',
     path: 'The Cranberries/Everybody Else Is Doing It So Why Cant We',
@@ -11760,6 +11878,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a09f301d2141193dcd7',
     title: 'No Wow',
     artist: 'The Kills',
     path: 'The Kills/No Wow',
@@ -11844,6 +11963,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a15f301d2141193dcf2',
     title: 'The Fat of the Land',
     artist: 'The Prodigy',
     path: 'The Prodigy/The Fat Of The Land',
@@ -11921,6 +12041,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a21f301d2141193dd0b',
     title: 'Let It Bleed',
     artist: 'The Rolling Stones',
     path: 'The Rolling Stones/Let It Bleed',
@@ -11991,6 +12112,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a3cf301d2141193dd49',
     title: 'Tattoo You',
     artist: 'The Rolling Stones',
     path: 'The Rolling Stones/Tattoo You',
@@ -12075,6 +12197,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a5df301d2141193dda8',
     title: 'Is This It',
     artist: 'The Strokes',
     path: 'The Strokes/Is This It',
@@ -12159,6 +12282,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a30f301d2141193dd22',
     title: 'Sticky Fingers',
     artist: 'The Rolling Stones',
     path: 'The Rolling Stones/Sticky Fingers',
@@ -12285,6 +12409,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a74f301d2141193dde2',
     title: 'The Invisible Band',
     artist: 'Travis',
     path: 'Travis/The Invisible Band',
@@ -12376,6 +12501,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a52f301d2141193dd87',
     title: 'Best I',
     artist: 'The Smiths',
     path: 'The Smiths/Best I',
@@ -12481,6 +12607,7 @@ const albums = [
     ]
   },
   {
+    id: '633c79dcf301d2141193dc59',
     title: 'Direct Hits (Deluxe Edition)',
     artist: 'The Killers',
     path: 'The Killers/Direct Hits',
@@ -12614,6 +12741,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a7cf301d2141193ddff',
     title: 'The Man Who',
     artist: 'Travis',
     path: 'Travis/The Man Who',
@@ -12691,6 +12819,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a69f301d2141193ddc3',
     title: 'Urban Hymns',
     artist: 'The Verve',
     path: 'The Verve/Urban Hymns',
@@ -12789,6 +12918,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a47f301d2141193dd64',
     title: 'Voodoo Lounge',
     artist: 'The Rolling Stones',
     path: 'The Rolling Stones/Voodoo Lounge',
@@ -12901,6 +13031,7 @@ const albums = [
     ]
   },
   {
+    id: '633c7a88f301d2141193de18',
     title: 'Simple Things',
     artist: 'Zero 7',
     path: 'Zero 7/Simple Things',
@@ -12992,6 +13123,7 @@ const albums = [
     ]
   },
   {
+    id: '635111292e6d171a28157923',
     title: 'The Best of Blur',
     artist: 'Blur',
     path: 'Blur/The Best of Blur',
@@ -13125,6 +13257,7 @@ const albums = [
     ]
   },
   {
+    id: '6351145f2e6d171a28157979',
     title: 'The Very Best Of Sheryl Crow',
     artist: 'Sheryl Crow',
     path: 'Sheryl Crow/The Very Best Of Sheryl Crow',

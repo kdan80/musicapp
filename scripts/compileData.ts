@@ -2,7 +2,6 @@
 
 import fs from 'fs'
 import util from 'util'
-import { nanoid } from 'nanoid'
 import dotenv from 'dotenv'
 import * as data from './albums.json'
 
@@ -17,7 +16,7 @@ interface track {
 }
 
 interface album {
-    //id: string
+    id: string
     title: string
     artist: string
     path: string
@@ -62,7 +61,8 @@ for (let i = 0; i < data.length; i++) {
     }
 
     const album: album = {
-        //id: util.inspect(datum._id),
+        // Get the 12 byte/24 char mongodb _id and discard the rest of the string
+        id: util.inspect(datum._id).slice(11, 35),
         title: datum.title,
         artist: datum.artist,
         path: datum.path,
