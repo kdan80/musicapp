@@ -1,8 +1,12 @@
 'use client'
 import React from 'react'
+import { useRouter } from 'next/navigation'
 import albums from './data'
 
 export default function Home() {
+    const router = useRouter()
+
+    if (!sessionStorage.loggedIn) return router.push('/login')
     return (
         <main className='flex min-h-screen flex-col items-center justify-between p-24'>
             Hello
