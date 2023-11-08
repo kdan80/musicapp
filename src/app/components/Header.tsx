@@ -7,7 +7,7 @@ const Header = () => {
     const [modalIsOpen, setModalIsOpen] = React.useState(false)
 
     return (
-        <header className='w-full bg-[#202020] py-4 px-12'>
+        <header className='w-full bg-[#202020] py-4 px-8 md:px-12'>
             <div className='flex items-center justify-between'>
                 <div className='font-[1.1rem] font-semibold text-[#169b45]'>MusicApp</div>
                 <button
