@@ -7,7 +7,7 @@ import Page from '../components/Page'
 const Login = () => {
     const router = useRouter()
 
-    if (sessionStorage.loggedIn) return router.push('/')
+    if (localStorage.loggedIn) return router.push('/')
 
     const username = 'guest'
     const password = 'password'
@@ -18,7 +18,7 @@ const Login = () => {
         if (!username || !password) return
 
         if (username === 'guest' && password === 'password')
-            sessionStorage.setItem('loggedIn', 'true')
+            localStorage.setItem('loggedIn', 'true')
         return router.push('/')
     }
 

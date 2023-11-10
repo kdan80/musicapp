@@ -2,6 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    @media screen and (max-width: 499px) {
+        .card {
+            @apply w-card-mob;
+        }
+    }
+
+    @media screen and (min-width: 500px) {
+        .card {
+            @apply w-card-500;
+        }
+    }
+
+    @media screen and (min-width: 700px) {
+        .card {
+            @apply w-card-700;
+        }
+    }
+
+    @media screen and (min-width: 800px) {
+        .card {
+            @apply w-card-800;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .card {
+            @apply w-card-1200;
+        }
+    }
+
+    @media screen and (min-width: 1400px) {
+        .card {
+            @apply w-card-1400;
+        }
+    }
+
+    @media screen and (min-width: 1600px) {
+        .card {
+            @apply w-card-1600;
+        }
+    }
+
+    @media screen and (min-width: 1920px) {
+        .card {
+            @apply w-card-1920;
+        }
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
