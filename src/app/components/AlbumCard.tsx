@@ -3,24 +3,47 @@ import Image from 'next/legacy/image'
 import AlbumCardButton from './AlbumCardButton'
 import '../globals.css'
 
+export interface TrackList {
+    title: string
+    duration: number
+    track_number: number
+    id: string
+    filename: string
+}
+
+export interface Album {
+    title: string
+    artist: string
+    id: string
+    path: string
+    track_list: TrackList[]
+}
+
 interface Props {
-    album: any
-    setNowPlaying: any
-    SetCurrentTrack: any
+    album: Album
+    loadCurrentAlbum: (albumId: string) => void
+    setCurrentTrack: any
     setShowMiniPlayer: any
     priority: any
 }
 
 const AlbumCard = ({
     album,
-    setNowPlaying,
+    loadCurrentAlbum,
     setCurrentTrack,
     setShowMiniPlayer,
     priority,
 }: Props) => {
+    const handleClick = () => {
+        loadCurrentAlbum(album.id)
+    }
+
     return (
         <div className='mb-4 shrink-0 card'>
-            <div className='group relative block overflow-hidden shrink-0 rounded z-1'>
+            <div
+                className='group relative block overflow-hidden shrink-0 rounded z-1'
+                onClick={handleClick}
+            >
                 <Image
                     layout='responsive'
                     height={1}
@@ -34,10 +57,10 @@ const AlbumCard = ({
                 <AlbumCardButton />
             </div>
 
-            <div className='flex flex-col justify-center mt-1 text-center overflow-hidden whitespace-nowrap text-ellipsis'>
+            <div className='flex flex-col justify-center mt-1 text-center overflow-hidden whitespace-nowrap text-ellipsis pointer-events-none'>
                 <div
                     className='text-base hover:text-[#1ab751] cursor-pointer text-center overflow-hidden whitespace-nowrap text-ellipsis transition-colors duration-300 ease-in-out'
-                    //onClick={handleClick}
+                    onClick={handleClick}
                 >
                     {album.title}
                 </div>

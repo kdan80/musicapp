@@ -2,9 +2,9 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
-// The animations in this component can be achieved by CSS alone, however it is a mess
-// JS is slower but much easier to achieve the desired effect
-// In this case adding a clicked state in order to set up a timer for button click animations
+// The animations in this component can be achieved by CSS alone, however it is a mess in CSS and a wasteland in taiwlind
+// JS is slower but much easier to achieve the desired effect (a pulse/radiating shadow effect when the button is clicked)
+// In this case adding a "clicked" state in order to set up a timer for button click animations is more elegant
 
 // prettier-ignore
 const baseStyles = `
@@ -41,11 +41,7 @@ const dtStyles = `
 
     md:active:bg-[#169b45]
     md:hover:bg-[rgba(22,155,69,.8)]
-`
-
-// prettier-ignore
-const mobStyles = `
-
+    outline-[#169b4550]
 `
 
 // prettier-ignore
@@ -54,7 +50,6 @@ const clickedStyles = `
     max-md:outline
     max-md:outline-1
     max-md:outline-offset-[12px]
-    max-md:outline-[#169b4522]
     max-md:shadow-[0_0_24px_#169b45]
 `
 
@@ -72,7 +67,7 @@ const AlbumCardButton = () => {
         <button
             type='button'
             onClick={handleClick}
-            className={`${baseStyles} ${dtStyles} ${mobStyles} ${clicked && clickedStyles}`}
+            className={`${baseStyles} ${dtStyles} ${clicked && clickedStyles}`}
         >
             <FontAwesomeIcon
                 className={`ml-[.15rem] w-[.8rem] h-[.8rem] transition-colors duration-300 ease-in-out ${

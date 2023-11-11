@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* $handleSize: 16px;
+$handleColor: transparent;
+$handleShadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+$trackHeight: 4px;
+$handleOffset: calc(($trackHeight) - ($handleSize / 2) - 2px);
+$trackColor: #444; */
+
+:root {
+    --handleSize: 16px;
+    --handleColor: transparent;
+    --handleShadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    --trackHeight: 4px;
+    --handleOffset: calc((var(--trackHeight)) - (var(--handleSize) / 2) - 2px);
+    --trackColor: #444;
+}
+
 @layer components {
     @media screen and (max-width: 499px) {
         .card {
@@ -61,5 +77,60 @@ html {
         background: url('/background.webP');
         background-repeat: no-repeat;
         background-size: cover;
+    }
+}
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+input[type='range'] {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: var(--trackHeight);
+    cursor: pointer;
+    z-index: 3;
+
+    /* Firefox slider styles */
+    &::-moz-range-thumb {
+        appearance: none;
+        border: none;
+        height: var(--handleSize);
+        width: var(--handleSize);
+        background-color: var(--handleColor);
+    }
+
+    &::-moz-range-track {
+        background-color: transparent;
+    }
+
+    /* Chrome based browser slider styles */
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: var(--handleSize);
+        width: var(--handleSize);
+        margin-top: var(--handleOffset);
+        border-radius: calc(var(--handleSize) / 2);
+        background-color: var(--handleColor);
+        /* box-shadow: $handleShadow; */
+    }
+
+    &::-webkit-slider-runnable-track {
+        height: var(--trackHeight);
+        background-color: transparent;
     }
 }

@@ -22,14 +22,14 @@ const LogoutModal = ({ setModalIsOpen, modalIsOpen }: Props) => {
                     <div className='flex justify-end items-center gap-6 md:gap-10 mt-2'>
                         <button
                             type='button'
-                            className='font-[1.1rem] font-semibold text-[#169b45] hover:text-[#1ab751] transition-colors duration-300 ease-in-out'
+                            className='text-[1.1rem] font-semibold text-[#169b45] hover:text-[#1ab751] transition-colors duration-300 ease-in-out'
                             onClick={() => setModalIsOpen(false)}
                         >
                             Cancel
                         </button>
                         <button
                             type='button'
-                            className='font-[1.1rem] font-semibold text-[#169b45] hover:text-[#1ab751] transition-colors duration-300 ease-in-out'
+                            className='text-[1.1rem] font-semibold text-[#169b45] hover:text-[#1ab751] transition-colors duration-300 ease-in-out'
                             onClick={logout}
                         >
                             Yes
