@@ -20,7 +20,7 @@ const AlbumCard = ({
 }: Props) => {
     return (
         <div className='mb-4 shrink-0 card'>
-            <div className='group relative block overflow-hidden shrink-0 rounded'>
+            <div className='group relative block overflow-hidden shrink-0 rounded z-1'>
                 <Image
                     layout='responsive'
                     height={1}
@@ -30,7 +30,7 @@ const AlbumCard = ({
                     placeholder='blur'
                     blurDataURL={`/albumArt/${album.id}/blurData.webp`}
                 />
-                <div className='absolute bg-[rgba(0,0,0,0)] group-hover:bg-[rgba(0,0,0,.6)] top-0 left-0 right-0 bottom-0 transition-all duration-200 ease-in-out cursor-pointer' />
+                <div className='absolute bg-[rgba(0,0,0,0)] group-hover:bg-[rgba(0,0,0,.6)] inset-0 transition-all duration-200 ease-in-out cursor-pointer' />
                 <AlbumCardButton />
             </div>
 

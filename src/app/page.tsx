@@ -10,6 +10,8 @@ export default function Home() {
 
     if (!localStorage.loggedIn) return router.push('/login')
 
+    const testAlbums = albums.slice(0, 30)
+
     return (
         <main className='flex min-h-screen flex-col bg-[#101010] text-white'>
             <Header />
@@ -22,7 +24,7 @@ export default function Home() {
                         id='albumGrid'
                         className='flex flex-wrap gap-6 mb-[5rem] mb-[3.5rem]'
                     >
-                        {albums.map((album, index) => (
+                        {testAlbums.map((album, index) => (
                             <AlbumCard
                                 key={index}
                                 album={album}
