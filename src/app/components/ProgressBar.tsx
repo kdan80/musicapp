@@ -11,33 +11,18 @@ const ProgressBar = ({ currentTime, trackDuration, setSkipToTimestamp }: Props) 
 
     React.useEffect(() => {
         setWidth((currentTime / trackDuration) * 100)
+        // setWidth(50)
     }, [currentTime, trackDuration])
-
-    // .track,
-    // .progress {
-    //     height: $trackHeight;
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     bottom: 0;
-    //     margin: auto;
-    // }
-
-    // .track {
-    //     width: 100%;
-    //     background-color: $trackColor;
-    // }
-
-    // .progress {
-    //     background-color: colors.$hero;
-    //     border-radius: 0 calc($trackHeight / 2) calc($trackHeight / 2) 0;
-    // }
 
     return (
         <div className='grow flex items-center relative w-full h-[5px]'>
-            <div className='absolute m-auto h-[var(--trackHeight)] inset-0 w-full bg-[var(--trackColor)]' />
             <div
-                className='absolute m-auto h-[var(--trackHeight)] inset-0 bg-[#1ab751] rounded-r-full'
+                id='track'
+                className='absolute  h-[var(--trackHeight)] inset-0 w-full bg-[var(--trackColor)]'
+            />
+            <div
+                id='progress'
+                className='absolute  h-[var(--trackHeight)] inset-0 bg-[#1ab751] rounded-r-full'
                 style={{ width: `calc(${width}% + 4px)` }}
             />
 

@@ -28,6 +28,6 @@ const config: Config = {
             },
         },
     },
-    plugins: [],
+    plugins: [require('tailwindcss-debug-screens')],
 }
 export default config

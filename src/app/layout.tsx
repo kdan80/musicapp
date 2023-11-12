@@ -20,7 +20,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang='en'>
-            <body className={`${inter.className}, ${poppins.variable} font-poppins`}>
+            <body
+                className={`${inter.className}, ${poppins.variable} ${
+                    process.env.ENV === 'development' && 'debug-screens'
+                }  font-poppins`}
+            >
                 {children}
             </body>
         </html>

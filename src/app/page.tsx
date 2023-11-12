@@ -54,6 +54,7 @@ export default function Home() {
                 <AudioPlayer
                     currentAlbum={currentAlbum}
                     currentTrackNumber={currentTrackNumber}
+                    setCurrentTrackNumber={setCurrentTrackNumber}
                     playerState={playerState}
                     setPlayerState={setPlayerState}
                 />
