@@ -26,6 +26,7 @@ export default function Home() {
 
     return (
         <main className='flex min-h-screen flex-col bg-[#101010] text-white'>
+            {console.log('show: ', showPlayer)}
             <Header />
             <div
                 id='dashboard'
@@ -41,8 +42,8 @@ export default function Home() {
                                 key={index}
                                 album={album}
                                 loadCurrentAlbum={loadCurrentAlbum}
+                                setPlayerState={setPlayerState}
                                 setCurrentTrack={2}
-                                setShowMiniPlayer={false}
                                 priority={index < 30}
                             />
                         ))}
@@ -50,7 +51,11 @@ export default function Home() {
                 )}
             </div>
 
-            {showPlayer && (
+            <div
+                className={`fixed z-20 h-full w-full inset-0 bg-[#080808] transition-all duration-300 ease-in-out ${
+                    showPlayer ? 'translate-y-0' : 'translate-y-full'
+                }`}
+            >
                 <AudioPlayer
                     currentAlbum={currentAlbum}
                     currentTrackNumber={currentTrackNumber}
@@ -58,7 +63,7 @@ export default function Home() {
                     playerState={playerState}
                     setPlayerState={setPlayerState}
                 />
-            )}
+            </div>
 
             <audio
                 controls={true}

@@ -18,7 +18,7 @@ const SkipForward = ({}: Props) => {
         <MediaButton>
             <FontAwesomeIcon
                 icon={faForwardStep}
-                className='text-[#cecece] transition-all duration-300 ease-in-out'
+                className='transition-all duration-300 ease-in-out'
             />
         </MediaButton>
     )

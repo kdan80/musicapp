@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import Image from 'next/legacy/image'
 import AlbumCardButton from './AlbumCardButton'
 import '../globals.css'
+import { PlayerState } from '../page'
 
 export interface TrackList {
     title: string
@@ -22,20 +23,22 @@ export interface Album {
 interface Props {
     album: Album
     loadCurrentAlbum: (albumId: string) => void
+    setPlayerState: Dispatch<SetStateAction<PlayerState>>
     setCurrentTrack: any
-    setShowMiniPlayer: any
     priority: any
 }
 
 const AlbumCard = ({
     album,
     loadCurrentAlbum,
+    setPlayerState,
     setCurrentTrack,
-    setShowMiniPlayer,
     priority,
 }: Props) => {
     const handleClick = () => {
+        console.log('ch: ')
         loadCurrentAlbum(album.id)
+        setPlayerState(1)
     }
 
     return (
