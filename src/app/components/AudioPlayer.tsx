@@ -10,6 +10,8 @@ import SkipBackward from './SkipBackward'
 import SkipForward from './SkipForward'
 import PlayButton from './PlayButton'
 import TrackList from './TrackList'
+import MuteButton from './MuteButton'
+import VolumeSlider from './VolumeSlider'
 
 interface Props {
     playerState: PlayerState
@@ -17,6 +19,12 @@ interface Props {
     currentAlbum: Album
     currentTrackNumber: number
     setCurrentTrackNumber: Dispatch<SetStateAction<number>>
+    currentTime: number
+    setSkipToTimestamp: Dispatch<SetStateAction<number>>
+    isMuted: boolean
+    setIsMuted: Dispatch<SetStateAction<boolean>>
+    volume: number
+    setVolume: Dispatch<SetStateAction<number>>
 }
 
 const AudioPlayer = ({
@@ -24,24 +32,25 @@ const AudioPlayer = ({
     setPlayerState,
     currentAlbum,
     currentTrackNumber,
+    currentTime,
+    setSkipToTimestamp,
+    isMuted,
+    setIsMuted,
+    volume,
+    setVolume,
     setCurrentTrackNumber,
 }: Props) => {
-    const [currentTime, setCurrentTime] = React.useState(0)
-    const [skipToTimestamp, setSkipToTimestamp] = React.useState(0)
     const [showTrackList, setShowTrackList] = React.useState(false)
-    const hidePlayer = playerState === 0
-    const showFullPlayer = playerState === 1
-    const showMiniPlayer = playerState === 2
     const trackDuration = currentAlbum.track_list[currentTrackNumber].duration
 
     return (
-        <div className='w-full h-full bg-[#080808] flex flex-col justify-between items-center px-8 md:px-16 '>
+        <div className='w-full h-full bg-[#080808] flex flex-col justify-between items-center px-8 md:px-16 md:gap-12 md:overflow-y-scroll'>
             <div
                 id='header'
-                className='border min-h-[3.2rem] w-full flex items-center justify-between '
+                className='min-h-[3.2rem] w-full flex items-center justify-between'
             >
                 <button
-                    onClick={() => setPlayerState(0)}
+                    onClick={() => setPlayerState(2)}
                     className='flex items-center justify-start pr-6 py-6 text-lg'
                 >
                     <FontAwesomeIcon icon={faArrowLeft} />
@@ -53,10 +62,10 @@ const AudioPlayer = ({
                     <FontAwesomeIcon icon={faEllipsisV} />
                 </button>
             </div>
-            <div className='grow w-full border flex flex-col md:flex-row md:items-center md:shrink-0 md:gap-4'>
+            <div className='grow w-full flex flex-col md:flex-row md:items-end md:shrink-0 md:gap-5'>
                 <div
                     id='albumArt'
-                    className='border w-full flex items-center justify-center my-auto'
+                    className='w-full md:max-w-[15rem] flex items-center justify-center my-auto'
                 >
                     <Image
                         width={500}
@@ -70,7 +79,7 @@ const AudioPlayer = ({
                 </div>
                 <div
                     id='playerControls'
-                    className='border w-full flex flex-col gap-12 pb-12 '
+                    className='w-full flex flex-col gap-12 pb-12 md:pb-0'
                 >
                     <div
                         id='trackInfo'
@@ -95,7 +104,7 @@ const AudioPlayer = ({
                         <div>{moment(trackDuration).format('m:ss')}</div>
                     </div>
 
-                    <div className={''}>
+                    <div className={'flex items-center md:justify-between md:gap-8 justify-center'}>
                         <div className={'flex items-center justify-center gap-12'}>
                             <SkipBackward
                                 currentTrackNumber={currentTrackNumber}
@@ -106,30 +115,37 @@ const AudioPlayer = ({
                                 isPlaying={false}
                                 setIsPlaying={() => true}
                             />
-                            {/* <SkipButton
-                                        skipBackward={false}
-                                        currentTrack={"currentTrack"}
-                                        setCurrentTrack={"setCurrentTrack"}
-                                        numberOfTracks={"track_list.length"} /> */}
                             <SkipForward
                                 currentTrackNumber={currentTrackNumber}
                                 setCurrentTrackNumber={setCurrentTrackNumber}
                             />
                         </div>
-                        <div className={'styles.buttonsVol'}>
-                            {/* <Mute
-                                        isMuted={"isMuted"}
-                                        setIsMuted={"setIsMuted"}/>
-                                    <VolumeSlider
-                                        isMuted={"isMuted"}
-                                        setIsMuted={"setIsMuted"}
-                                        volume={"volume"}
-                                        setVolume={"setVolume"} /> */}
+                        <div className={'items-center gap-8 hidden md:flex'}>
+                            <MuteButton
+                                isMuted={isMuted}
+                                setIsMuted={setIsMuted}
+                            />
+                            <VolumeSlider
+                                isMuted={isMuted}
+                                setIsMuted={setIsMuted}
+                                volume={volume}
+                                setVolume={setVolume}
+                            />
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div className='hidden md:flex w-full'>
+                <TrackList
+                    currentAlbum={currentAlbum}
+                    currentTrackNumber={currentTrackNumber}
+                    setCurrentTrackNumber={setCurrentTrackNumber}
+                    setShowTrackList={setShowTrackList}
+                />
+            </div>
+
+            {/* Track list for mobile */}
             <div className={`fixed inset-0 ${showTrackList ? 'block' : 'hidden'}`}>
                 <TrackList
                     currentAlbum={currentAlbum}

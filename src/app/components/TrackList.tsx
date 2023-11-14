@@ -20,10 +20,10 @@ const TrackList = ({
     return (
         <div
             className={
-                'bg-[rgba(8,8,8,.88)] backdrop-blur w-full h-full flex flex-col items-center pb-[3.2rem] px-8'
+                'bg-[rgba(8,8,8,.88)] backdrop-blur w-full h-full flex flex-col items-center pb-[3.2rem] px-8 md:px-0'
             }
         >
-            <div className={'bg-[#080808] w-full min-h-[3.2rem] flex items-center mb-8'}>
+            <div className={'bg-[#080808] w-full min-h-[3.2rem] flex items-center mb-8 md:hidden'}>
                 <button className={'h-full px-1 text-white text-[1.25rem]'}>
                     <FontAwesomeIcon
                         onClick={() => setShowTrackList(false)}
