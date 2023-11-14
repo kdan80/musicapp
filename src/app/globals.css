@@ -139,3 +139,7 @@ input[type='range'] {
 input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
+
+.no-scroll-bar::-webkit-scrollbar {
+    width: 0;
+}

@@ -26,7 +26,6 @@ export default function Home() {
 
     return (
         <main className='flex min-h-screen flex-col bg-[#101010] text-white'>
-            {console.log('show: ', showPlayer)}
             <Header />
             <div
                 id='dashboard'
@@ -52,7 +51,7 @@ export default function Home() {
             </div>
 
             <div
-                className={`fixed z-20 h-full w-full inset-0 bg-[#080808] transition-all duration-300 ease-in-out ${
+                className={`fixed z-20 h-full w-full top-0 left-0 bg-[#080808] transition-all duration-300 ease-in-out ${
                     showPlayer ? 'translate-y-0' : 'translate-y-full'
                 }`}
             >
