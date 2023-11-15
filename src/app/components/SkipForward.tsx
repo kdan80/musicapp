@@ -2,16 +2,17 @@ import React, { Dispatch, SetStateAction } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faForwardStep } from '@fortawesome/free-solid-svg-icons'
 import MediaButton from './MediaButton'
+import { Track } from '../hooks/useCurrentTrack'
 
 interface Props {
-    setCurrentTrackNumber: Dispatch<SetStateAction<number>>
-    currentTrackNumber: number
+    setCurrentTrack: Dispatch<SetStateAction<Track | null>>
+    currentTrack: Track
 }
 
-const SkipForward = ({}: Props) => {
-    const skipTrackBackward = ({ currentTrackNumber, setCurrentTrackNumber }: Props) => {
-        if (currentTrackNumber > 0) return setCurrentTrackNumber(prev => prev - 1)
-        return setCurrentTrackNumber(numberOfTracks - 1)
+const SkipForward = ({ currentTrack, setCurrentTrack }: Props) => {
+    const skipTrackBackward = ({ currentTrack, setCurrentTrack }: Props) => {
+        if (currentTrack.track_number > 0) return setCurrentTrack(prev => prev)
+        return setCurrentTrack(prev => prev)
     }
 
     return (

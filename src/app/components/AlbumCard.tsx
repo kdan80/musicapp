@@ -3,28 +3,14 @@ import Image from 'next/legacy/image'
 import AlbumCardButton from './AlbumCardButton'
 import '../globals.css'
 import { PlayerState } from '../page'
-
-export interface TrackList {
-    title: string
-    duration: number
-    track_number: number
-    id: string
-    filename: string
-}
-
-export interface Album {
-    title: string
-    artist: string
-    id: string
-    path: string
-    track_list: TrackList[]
-}
+import { Album } from '../hooks/useCurrentAlbum'
+import { Track } from '../hooks/useCurrentTrack'
 
 interface Props {
     album: Album
     loadCurrentAlbum: (albumId: string) => void
     setPlayerState: Dispatch<SetStateAction<PlayerState>>
-    setCurrentTrack: any
+    setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     priority: any
 }
 
@@ -38,6 +24,7 @@ const AlbumCard = ({
     const handleClick = () => {
         console.log('ch: ')
         loadCurrentAlbum(album.id)
+        setCurrentTrack(album.track_list[0])
         setPlayerState(1)
     }
 

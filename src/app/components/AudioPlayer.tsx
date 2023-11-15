@@ -5,20 +5,20 @@ import ProgressBar from './ProgressBar'
 import { PlayerState } from '../page'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
-import { Album } from './AlbumCard'
+import { Album } from '../hooks/useCurrentAlbum'
 import SkipBackward from './SkipBackward'
 import SkipForward from './SkipForward'
 import PlayButton from './PlayButton'
 import TrackList from './TrackList'
 import MuteButton from './MuteButton'
 import VolumeSlider from './VolumeSlider'
+import { Track } from '../hooks/useCurrentTrack'
 
 interface Props {
-    playerState: PlayerState
     setPlayerState: Dispatch<SetStateAction<PlayerState>>
     currentAlbum: Album
-    currentTrackNumber: number
-    setCurrentTrackNumber: Dispatch<SetStateAction<number>>
+    currentTrack: Track
+    setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     currentTime: number
     setSkipToTimestamp: Dispatch<SetStateAction<number>>
     isMuted: boolean
@@ -28,20 +28,18 @@ interface Props {
 }
 
 const AudioPlayer = ({
-    playerState,
     setPlayerState,
     currentAlbum,
-    currentTrackNumber,
+    currentTrack,
+    setCurrentTrack,
     currentTime,
     setSkipToTimestamp,
     isMuted,
     setIsMuted,
     volume,
     setVolume,
-    setCurrentTrackNumber,
 }: Props) => {
     const [showTrackList, setShowTrackList] = React.useState(false)
-    const trackDuration = currentAlbum.track_list[currentTrackNumber].duration
 
     return (
         <div className='w-full h-full bg-[#080808] flex flex-col justify-between items-center px-8 md:px-16 md:gap-12 md:overflow-y-scroll'>
@@ -86,7 +84,7 @@ const AudioPlayer = ({
                         className='text-[#bbb] text-[.9rem]'
                     >
                         <div className='font-semibold text-white mb-[.2rem] text-overflow'>
-                            {currentAlbum.track_list[currentTrackNumber].title}
+                            {currentTrack.title}
                         </div>
                         <div className='text-overflow'>{currentAlbum.title}</div>
                         <div className='text-overflow -mt-[.2rem]'>{currentAlbum.artist}</div>
@@ -98,17 +96,17 @@ const AudioPlayer = ({
                         <div>{moment(currentTime).format('m:ss')}</div>
                         <ProgressBar
                             currentTime={currentTime}
-                            trackDuration={trackDuration}
+                            trackDuration={currentTrack.duration}
                             setSkipToTimestamp={setSkipToTimestamp}
                         />
-                        <div>{moment(trackDuration).format('m:ss')}</div>
+                        <div>{moment(currentTrack.duration).format('m:ss')}</div>
                     </div>
 
                     <div className={'flex items-center md:justify-between md:gap-8 justify-center'}>
                         <div className={'flex items-center justify-center gap-12'}>
                             <SkipBackward
-                                currentTrackNumber={currentTrackNumber}
-                                setCurrentTrackNumber={setCurrentTrackNumber}
+                                currentTrack={currentTrack}
+                                setCurrentTrack={setCurrentTrack}
                                 // numberOfTracks={'track_list.length'}
                             />
                             <PlayButton
@@ -116,8 +114,8 @@ const AudioPlayer = ({
                                 setIsPlaying={() => true}
                             />
                             <SkipForward
-                                currentTrackNumber={currentTrackNumber}
-                                setCurrentTrackNumber={setCurrentTrackNumber}
+                                currentTrack={currentTrack}
+                                setCurrentTrack={setCurrentTrack}
                             />
                         </div>
                         <div className={'items-center gap-8 hidden md:flex'}>
@@ -139,8 +137,7 @@ const AudioPlayer = ({
             <div className='hidden md:flex w-full'>
                 <TrackList
                     currentAlbum={currentAlbum}
-                    currentTrackNumber={currentTrackNumber}
-                    setCurrentTrackNumber={setCurrentTrackNumber}
+                    setCurrentTrack={setCurrentTrack}
                     setShowTrackList={setShowTrackList}
                 />
             </div>
@@ -149,8 +146,7 @@ const AudioPlayer = ({
             <div className={`fixed inset-0 ${showTrackList ? 'block' : 'hidden'}`}>
                 <TrackList
                     currentAlbum={currentAlbum}
-                    currentTrackNumber={currentTrackNumber}
-                    setCurrentTrackNumber={setCurrentTrackNumber}
+                    setCurrentTrack={setCurrentTrack}
                     setShowTrackList={setShowTrackList}
                 />
             </div>

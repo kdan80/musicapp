@@ -24,5 +24,5 @@ export const GET = async (req: Request, { params }: { params: { id: string } }) 
 
     const url = getCloudfrontUrl(song.path)
 
-    return new Response(JSON.stringify({ message: url }))
+    return new Response(JSON.stringify({ url: url }))
 }

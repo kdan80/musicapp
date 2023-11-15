@@ -9,11 +9,12 @@ import VolumeSlider from './VolumeSlider'
 import moment from 'moment'
 import { Album } from './AlbumCard'
 import { PlayerState } from '../page'
+import { Track } from '../hooks/useCurrentTrack'
 
 interface Props {
     currentAlbum: Album
-    currentTrackNumber: number
-    setCurrentTrackNumber: Dispatch<SetStateAction<number>>
+    currentTrack: Track
+    setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     isPlaying: boolean
     setIsPlaying: Dispatch<SetStateAction<boolean>>
     isMuted: boolean
@@ -27,8 +28,8 @@ interface Props {
 
 const MiniPlayer: React.FC<Props> = ({
     currentAlbum,
-    currentTrackNumber,
-    setCurrentTrackNumber,
+    currentTrack,
+    setCurrentTrack,
     currentTime,
     isPlaying,
     setIsPlaying,
@@ -39,18 +40,16 @@ const MiniPlayer: React.FC<Props> = ({
     setSkipToTimestamp,
     setPlayerState,
 }) => {
-    const { title, artist, track_list } = currentAlbum
-
     const handleClick = (e: any) => {
         return setPlayerState(1)
     }
 
-    const trackDuration = currentAlbum.track_list[currentTrackNumber].duration
+    const trackDuration = currentTrack.duration
 
     return (
-        <div className={'w-full '}>
+        <div className={'w-full'}>
             <div className={'h-full flex flex-col md:flex-col-reverse bg-[#202020] '}>
-                <div className={'flex items-center h-full py-[1.25rem] md:py-4 px-6'}>
+                <div className={'flex items-center h-full py-3 px-6'}>
                     {/* Left panel - img & info */}
                     <div
                         className={
@@ -67,10 +66,10 @@ const MiniPlayer: React.FC<Props> = ({
                             alt='album art'
                         />
                         <div className={'text-[.875rem]'}>
-                            <div className={'styles.nowPlayingSongTitle'}>
-                                {track_list[currentTrackNumber].title}
+                            <div className={'styles.nowPlayingSongTitle'}>{currentTrack.title}</div>
+                            <div className={'mt-[.2rem] text-[rgb(255,255,255,.4)]'}>
+                                {currentAlbum.artist}
                             </div>
-                            <div className={'mt-[.2rem] text-[rgb(255,255,255,.4)]'}>{artist}</div>
                         </div>
                         <div className={'hidden lg:block lg:ml-8'}>
                             {moment(currentTime).format('m:ss')} /{' '}
@@ -85,8 +84,8 @@ const MiniPlayer: React.FC<Props> = ({
                         }
                     >
                         <SkipBackward
-                            currentTrackNumber={currentTrackNumber}
-                            setCurrentTrackNumber={setCurrentTrackNumber}
+                            currentTrack={currentTrack}
+                            setCurrentTrack={setCurrentTrack}
                             // numberOfTracks={'track_list.length'}
                         />
                         <PlayButton
@@ -94,8 +93,8 @@ const MiniPlayer: React.FC<Props> = ({
                             setIsPlaying={setIsPlaying}
                         />
                         <SkipForward
-                            currentTrackNumber={currentTrackNumber}
-                            setCurrentTrackNumber={setCurrentTrackNumber}
+                            currentTrack={currentTrack}
+                            setCurrentTrack={setCurrentTrack}
                         />
                     </div>
 
@@ -127,7 +126,7 @@ const MiniPlayer: React.FC<Props> = ({
                 />
             </div>
 
-            <div className={'md:hidden w-full height-6 bg-[0,0,0,.7] backdrop-blur-md'} />
+            <div className={'md:hidden w-full h-6 bg-[0,0,0,.7] backdrop-blur-md'} />
         </div>
     )
 }

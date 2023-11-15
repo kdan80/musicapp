@@ -1,22 +1,17 @@
 import React, { Dispatch, SetStateAction } from 'react'
-import { Album } from './AlbumCard'
+import { Album } from '../hooks/useCurrentAlbum'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
+import { Track } from '../hooks/useCurrentTrack'
 
 interface Props {
-    currentTrackNumber: number
     currentAlbum: Album
-    setCurrentTrackNumber: Dispatch<SetStateAction<number>>
+    setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     setShowTrackList: Dispatch<SetStateAction<boolean>>
 }
 
-const TrackList = ({
-    currentTrackNumber,
-    currentAlbum,
-    setCurrentTrackNumber,
-    setShowTrackList,
-}: Props) => {
+const TrackList = ({ currentAlbum, setCurrentTrack, setShowTrackList }: Props) => {
     return (
         <div
             className={
@@ -42,9 +37,9 @@ const TrackList = ({
             <ul className={'overflow-y-scroll overflow-x-hidden w-full no-scroll-bar'}>
                 {currentAlbum.track_list.map((track, index) => (
                     <li
-                        onClick={() => setCurrentTrackNumber(index)}
+                        onClick={() => setCurrentTrack(track)}
                         className={`flex h-[3.5rem] items-center gap-4 cursor-pointer border-b-[1px] border-[#444] transition-colors duration-200 ease-in-out ${
-                            index === currentTrackNumber ? 'text-[#1ab751]' : 'text-[#eee]'
+                            index === track.track_number ? 'text-[#1ab751]' : 'text-[#eee]'
                         }`}
                         key={index}
                     >
