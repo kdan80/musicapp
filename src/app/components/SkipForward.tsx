@@ -7,16 +7,17 @@ import { Track } from '../hooks/useCurrentTrack'
 interface Props {
     setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     currentTrack: Track
+    trackList: Track[]
 }
 
-const SkipForward = ({ currentTrack, setCurrentTrack }: Props) => {
-    const skipTrackBackward = ({ currentTrack, setCurrentTrack }: Props) => {
-        if (currentTrack.track_number > 0) return setCurrentTrack(prev => prev)
-        return setCurrentTrack(prev => prev)
+const SkipForward = ({ currentTrack, setCurrentTrack, trackList }: Props) => {
+    const skipTrackForward = () => {
+        if (currentTrack.track_number === trackList.length) return setCurrentTrack(currentTrack)
+        return setCurrentTrack(trackList[currentTrack.track_number])
     }
 
     return (
-        <MediaButton>
+        <MediaButton clickHandler={skipTrackForward}>
             <FontAwesomeIcon
                 icon={faForwardStep}
                 className='transition-all duration-300 ease-in-out'

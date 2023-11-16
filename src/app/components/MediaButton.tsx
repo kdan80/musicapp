@@ -48,4 +48,3 @@ const MediaButton = ({ children, clickHandler }: Props) => {
 }
 
 export default MediaButton
-//{React.cloneElement(children as React.ReactElement, { clicked: clicked })}

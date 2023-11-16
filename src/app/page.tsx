@@ -9,6 +9,7 @@ import MiniPlayer from './components/MiniPlayer'
 import { useCurrentAlbum, usePlayerState } from './hooks'
 import useCurrentTrack from './hooks/useCurrentTrack'
 import usePlayerVolume from './hooks/usePlayerVolume'
+import axios from 'axios'
 
 export type PlayerState = 0 | 1 | 2
 
@@ -32,6 +33,16 @@ export default function Home() {
             ? document.body.classList.add('overflow-hidden')
             : document.body.classList.remove('overflow-hidden')
     }, [showFullPlayer])
+
+    const getTrackSrc = async (trackId: string) => {
+        try {
+            if (!currentTrack) return
+            const response = await axios.get(`http://192.168.1.21:3000/api/${trackId}`)
+            setCurrentTrackSrc(response.data.url)
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return (
         <main className='flex min-h-screen flex-col bg-[#101010] text-white'>
@@ -107,7 +118,7 @@ export default function Home() {
             {currentAlbum && currentTrackSrc && (
                 <audio
                     controls={false}
-                    src={currentTrackSrc}
+                    //src={currentTrackSrc}
                     autoPlay={true}
                     ref={ref}
                     onTimeUpdate={(e: any) => setCurrentTime(e.target.currentTime * 1000)}

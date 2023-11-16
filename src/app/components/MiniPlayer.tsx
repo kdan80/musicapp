@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Mute from './MuteButton'
 import VolumeSlider from './VolumeSlider'
 import moment from 'moment'
-import { Album } from './AlbumCard'
+import { Album } from '../hooks/useCurrentAlbum'
 import { PlayerState } from '../page'
 import { Track } from '../hooks/useCurrentTrack'
 
@@ -53,7 +53,7 @@ const MiniPlayer: React.FC<Props> = ({
                     {/* Left panel - img & info */}
                     <div
                         className={
-                            'flex items-center grow px-[.4rem] md:grow gap-2 h-full cursor-pointer'
+                            'flex items-center px-[.4rem] grow md:shrink-1 md:basis-0 gap-2 h-full cursor-pointer'
                         }
                         onClick={handleClick}
                     >
@@ -65,9 +65,15 @@ const MiniPlayer: React.FC<Props> = ({
                             src={`/albumArt/${currentAlbum.id}/250x250.webp`}
                             alt='album art'
                         />
-                        <div className={'text-[.875rem]'}>
-                            <div className={'styles.nowPlayingSongTitle'}>{currentTrack.title}</div>
-                            <div className={'mt-[.2rem] text-[rgb(255,255,255,.4)]'}>
+                        <div className={'text-[.875rem] w-52'}>
+                            <div className={'whitespace-nowrap overflow-hidden text-ellipsis'}>
+                                {currentTrack.title}
+                            </div>
+                            <div
+                                className={
+                                    'mt-[.2rem] text-[rgb(255,255,255,.4)] whitespace-nowrap overflow-hidden text-ellipsis'
+                                }
+                            >
                                 {currentAlbum.artist}
                             </div>
                         </div>
@@ -80,13 +86,13 @@ const MiniPlayer: React.FC<Props> = ({
                     {/* Center panel - play controls */}
                     <div
                         className={
-                            'hidden md:flex justify-end md:justify-center md:grow gap-4 items-center h-full w-[4rem]'
+                            'hidden md:flex justify-end md:justify-center md:grow md:shrink-1 md:basis-0 gap-4 items-center h-full w-[4rem]'
                         }
                     >
                         <SkipBackward
                             currentTrack={currentTrack}
                             setCurrentTrack={setCurrentTrack}
-                            // numberOfTracks={'track_list.length'}
+                            trackList={currentAlbum.track_list}
                         />
                         <PlayButton
                             isPlaying={isPlaying}
@@ -95,11 +101,16 @@ const MiniPlayer: React.FC<Props> = ({
                         <SkipForward
                             currentTrack={currentTrack}
                             setCurrentTrack={setCurrentTrack}
+                            trackList={currentAlbum.track_list}
                         />
                     </div>
 
                     {/* Right panel - volume controls */}
-                    <div className={'hidden md:flex gap-4 justify-end md:grow items-center'}>
+                    <div
+                        className={
+                            'hidden md:flex gap-4 justify-end md:grow md:shrink-1 md:basis-0 items-center'
+                        }
+                    >
                         <Mute
                             isMuted={isMuted}
                             setIsMuted={setIsMuted}

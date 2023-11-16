@@ -107,7 +107,7 @@ const AudioPlayer = ({
                             <SkipBackward
                                 currentTrack={currentTrack}
                                 setCurrentTrack={setCurrentTrack}
-                                // numberOfTracks={'track_list.length'}
+                                trackList={currentAlbum.track_list}
                             />
                             <PlayButton
                                 isPlaying={false}
@@ -116,6 +116,7 @@ const AudioPlayer = ({
                             <SkipForward
                                 currentTrack={currentTrack}
                                 setCurrentTrack={setCurrentTrack}
+                                trackList={currentAlbum.track_list}
                             />
                         </div>
                         <div className={'items-center gap-8 hidden md:flex'}>
