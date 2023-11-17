@@ -7,11 +7,12 @@ import { Track } from '../hooks/useCurrentTrack'
 
 interface Props {
     currentAlbum: Album
+    currentTrack: Track
     setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     setShowTrackList: Dispatch<SetStateAction<boolean>>
 }
 
-const TrackList = ({ currentAlbum, setCurrentTrack, setShowTrackList }: Props) => {
+const TrackList = ({ currentAlbum, currentTrack, setCurrentTrack, setShowTrackList }: Props) => {
     return (
         <div
             className={
@@ -39,7 +40,9 @@ const TrackList = ({ currentAlbum, setCurrentTrack, setShowTrackList }: Props) =
                     <li
                         onClick={() => setCurrentTrack(track)}
                         className={`flex h-[3.5rem] items-center gap-4 cursor-pointer border-b-[1px] border-[#444] transition-colors duration-200 ease-in-out ${
-                            index === track.track_number ? 'text-[#1ab751]' : 'text-[#eee]'
+                            index === currentTrack.track_number - 1
+                                ? 'text-[#1ab751]'
+                                : 'text-[#eeeeee]'
                         }`}
                         key={index}
                     >

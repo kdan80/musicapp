@@ -8,7 +8,7 @@ interface Props {
     setIsPlaying: Dispatch<SetStateAction<boolean>>
 }
 
-const PlayButton: React.FC<Props> = ({ isPlaying, setIsPlaying }) => {
+const PlayButton = ({ isPlaying, setIsPlaying }: Props) => {
     const handleClick = () => {
         setIsPlaying(prev => !prev)
     }

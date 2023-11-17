@@ -4,12 +4,13 @@ import { useRouter } from 'next/navigation'
 import Header from './components/Header'
 import albums from '../albums'
 import AlbumCard from './components/AlbumCard'
-import AudioPlayer from './components/AudioPlayer'
+import AudioPlayerControls from './components/AudioPlayerControls'
 import MiniPlayer from './components/MiniPlayer'
 import { useCurrentAlbum, usePlayerState } from './hooks'
 import useCurrentTrack from './hooks/useCurrentTrack'
 import usePlayerVolume from './hooks/usePlayerVolume'
-import axios from 'axios'
+import usePlayerIsPlaying from './hooks/usePlayeIsPlaying'
+import AudioPlayer from './components/AudioPlayer'
 
 export type PlayerState = 0 | 1 | 2
 
@@ -22,11 +23,12 @@ export default function Home() {
     const { currentAlbum, loadCurrentAlbum } = useCurrentAlbum(albums)
     const { currentTrack, currentTrackSrc, setCurrentTrack } = useCurrentTrack()
     const { isMuted, setIsMuted, volume, setVolume } = usePlayerVolume()
+    const { isPlaying, setIsPlaying } = usePlayerIsPlaying()
     const ref = React.useRef<HTMLAudioElement | null>(null)
 
     const [currentTime, setCurrentTime] = React.useState(0)
     const [skipToTimestamp, setSkipToTimestamp] = React.useState(0)
-    const [isPlaying, setIsPlaying] = React.useState(false)
+    //const [isPlaying, setIsPlaying] = React.useState(false)
 
     React.useEffect(() => {
         showFullPlayer
@@ -34,14 +36,12 @@ export default function Home() {
             : document.body.classList.remove('overflow-hidden')
     }, [showFullPlayer])
 
-    const getTrackSrc = async (trackId: string) => {
-        try {
-            if (!currentTrack) return
-            const response = await axios.get(`http://192.168.1.21:3000/api/${trackId}`)
-            setCurrentTrackSrc(response.data.url)
-        } catch (err) {
-            console.log(err)
-        }
+    const play = () => {
+        if (ref.current && !isPlaying) return ref.current.play()
+    }
+
+    const pause = () => {
+        if (ref.current && isPlaying) return ref.current.pause()
     }
 
     return (
@@ -76,7 +76,7 @@ export default function Home() {
                 }`}
             >
                 {currentAlbum && currentTrack && (
-                    <AudioPlayer
+                    <AudioPlayerControls
                         currentAlbum={currentAlbum}
                         currentTrack={currentTrack}
                         setCurrentTrack={setCurrentTrack}
@@ -87,6 +87,8 @@ export default function Home() {
                         setIsMuted={setIsMuted}
                         volume={volume}
                         setVolume={setVolume}
+                        isPlaying={isPlaying}
+                        setIsPlaying={setIsPlaying}
                     />
                 )}
             </div>
@@ -116,16 +118,10 @@ export default function Home() {
 
             {/* This audio player is hidden. The code above is used for the UI */}
             {currentAlbum && currentTrackSrc && (
-                <audio
-                    controls={false}
-                    //src={currentTrackSrc}
-                    autoPlay={true}
-                    ref={ref}
-                    onTimeUpdate={(e: any) => setCurrentTime(e.target.currentTime * 1000)}
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
-                    //onEnded={playNextTrack}
-                    muted={isMuted}
+                <AudioPlayer
+                    currentTrackSrc={currentTrackSrc}
+                    isPlaying={isPlaying}
+                    isMuted={isMuted}
                 />
             )}
         </main>
