@@ -1,5 +1,4 @@
-import React, { ChangeEvent, Dispatch, SetStateAction } from 'react'
-import styles from './VolumeSlider.module.scss'
+import React, { Dispatch, SetStateAction } from 'react'
 
 interface Props {
     volume: number
@@ -17,7 +16,7 @@ const VolumeSlider = ({ volume, setVolume, isMuted, setIsMuted }: Props) => {
     const width = isMuted ? '0%' : `${volume}%`
 
     return (
-        <div className={styles.volumeSlider}>
+        <div className='volumeSlider'>
             <input
                 onChange={handleChange}
                 type='range'
@@ -26,9 +25,9 @@ const VolumeSlider = ({ volume, setVolume, isMuted, setIsMuted }: Props) => {
                 step={1}
                 value={isMuted ? 0 : volume}
             />
-            <div className={styles.volumeSliderTrack} />
+            <div className='volumeSliderTrack' />
             <div
-                className={styles.volumeSliderProgress}
+                className='volumeSliderProgress'
                 style={{ width: width }}
             />
         </div>
@@ -36,3 +35,42 @@ const VolumeSlider = ({ volume, setVolume, isMuted, setIsMuted }: Props) => {
 }
 
 export default VolumeSlider
+
+// import React, { ChangeEvent, Dispatch, SetStateAction } from 'react'
+// //import styles from './VolumeSlider.module.scss'
+
+// interface Props {
+//     volume: number
+//     setVolume: Dispatch<SetStateAction<number>>
+//     isMuted: boolean
+//     setIsMuted: Dispatch<SetStateAction<boolean>>
+// }
+
+// const VolumeSlider = ({ volume, setVolume, isMuted, setIsMuted }: Props) => {
+//     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//         setVolume(parseInt(e.target.value))
+//         setIsMuted(volume === 0)
+//     }
+
+//     const width = isMuted ? '0%' : `${volume}%`
+
+//     return (
+//         <div className={styles.volumeSlider}>
+//             <input
+//                 onChange={handleChange}
+//                 type='range'
+//                 min={0}
+//                 max={100}
+//                 step={1}
+//                 value={isMuted ? 0 : volume}
+//             />
+//             <div className={styles.volumeSliderTrack} />
+//             <div
+//                 className={styles.volumeSliderProgress}
+//                 style={{ width: width }}
+//             />
+//         </div>
+//     )
+// }
+
+// export default VolumeSlider

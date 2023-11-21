@@ -26,7 +26,7 @@ interface Props {
     setPlayerState: Dispatch<SetStateAction<PlayerState>>
 }
 
-const MiniPlayer: React.FC<Props> = ({
+const MiniPlayer = ({
     currentAlbum,
     currentTrack,
     setCurrentTrack,
@@ -39,7 +39,7 @@ const MiniPlayer: React.FC<Props> = ({
     setVolume,
     setSkipToTimestamp,
     setPlayerState,
-}) => {
+}: Props) => {
     const handleClick = (e: any) => {
         return setPlayerState(1)
     }
@@ -58,12 +58,12 @@ const MiniPlayer: React.FC<Props> = ({
                         onClick={handleClick}
                     >
                         <Image
-                            className={'h-full'}
-                            layout='fixed'
                             height={50}
                             width={50}
                             src={`/albumArt/${currentAlbum.id}/250x250.webp`}
                             alt='album art'
+                            placeholder='blur'
+                            blurDataURL={`/albumArt/${currentAlbum.id}/blurData.webp`}
                         />
                         <div className={'text-[.875rem] w-52'}>
                             <div className={'whitespace-nowrap overflow-hidden text-ellipsis'}>

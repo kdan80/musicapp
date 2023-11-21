@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* $handleSize: 16px;
-$handleColor: transparent;
-$handleShadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
-$trackHeight: 4px;
-$handleOffset: calc(($trackHeight) - ($handleSize / 2) - 2px);
-$trackColor: #444; */
-
 :root {
     --handleSize: 16px;
     --handleColor: transparent;
@@ -142,4 +135,75 @@ input[type='range']::-webkit-slider-thumb {
 
 .no-scroll-bar::-webkit-scrollbar {
     width: 0;
+}
+
+.volumeSlider * {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.volumeSlider {
+    width: 6rem;
+    position: relative;
+
+    input[type='range'] {
+        position: relative;
+        vertical-align: middle;
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: none;
+        width: 100%;
+        margin-top: -2px;
+        cursor: pointer;
+        z-index: 3;
+
+        &::-moz-range-thumb {
+            border: none;
+            height: 12px;
+            width: 12px;
+            margin-top: -3.5px;
+            background-color: #cecece;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        &::-moz-range-track {
+            background-color: transparent;
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 12px;
+            width: 12px;
+            margin-top: -3.5px;
+            border-radius: calc(12px / 2);
+            background-color: #cecece;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        &::-webkit-slider-runnable-track {
+            background-color: transparent;
+        }
+    }
+
+    &Track,
+    &Progress {
+        height: 4px;
+        border-radius: calc(4px / 2);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    &Track {
+        width: 100%;
+        background-color: #444;
+    }
+
+    &Progress {
+        background-color: #1ab751;
+    }
 }

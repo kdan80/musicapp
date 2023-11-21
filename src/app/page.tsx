@@ -18,8 +18,6 @@ export type PlayerState = 0 | 1 | 2
 export default function Home() {
     const router = useRouter()
 
-    if (!localStorage.loggedIn) return router.push('/login')
-
     const { showFullPlayer, showMiniPlayer, showDashboard, setPlayerState } = usePlayerState()
     const { currentAlbum, loadCurrentAlbum } = useCurrentAlbum(albums)
     const { currentTrack, currentTrackSrc, setCurrentTrack } = useCurrentTrack()
@@ -29,10 +27,12 @@ export default function Home() {
         useTrackProgress()
 
     React.useEffect(() => {
+        if (!localStorage.loggedIn) return router.push('/login')
+
         showFullPlayer
             ? document.body.classList.add('overflow-hidden')
             : document.body.classList.remove('overflow-hidden')
-    }, [showFullPlayer])
+    }, [showFullPlayer, router])
 
     return (
         <main className='flex min-h-screen flex-col bg-[#101010] text-white'>
@@ -54,7 +54,7 @@ export default function Home() {
                                 setPlayerState={setPlayerState}
                                 setCurrentTrack={setCurrentTrack}
                                 setIsPlaying={setIsPlaying}
-                                // priority={index < 30}
+                                priority={index < 30}
                             />
                         ))}
                     </div>
@@ -86,7 +86,7 @@ export default function Home() {
 
             <div
                 className={`fixed bottom-0 left-0 w-full transition-all duration-500 ease-in-out ${
-                    showMiniPlayer ? 'translate-y-[0%] z-20' : 'translate-y-full z-10'
+                    showMiniPlayer ? 'translate-y-[0] z-20' : 'translate-y-full z-10'
                 }`}
             >
                 {currentAlbum && currentTrack && (

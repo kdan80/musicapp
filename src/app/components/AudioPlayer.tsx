@@ -13,7 +13,6 @@ interface Props {
     setTrackProgress: Dispatch<SetStateAction<number>>
     setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     skipToTimestamp: number
-    setSkipToTimestamp: number
 }
 
 const AudioPlayer = ({

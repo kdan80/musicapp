@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import AlbumCardButton from './AlbumCardButton'
 import '../globals.css'
 import { PlayerState } from '../page'
@@ -12,6 +12,7 @@ interface Props {
     setPlayerState: Dispatch<SetStateAction<PlayerState>>
     setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     setIsPlaying: Dispatch<SetStateAction<boolean>>
+    priority: boolean
 }
 
 const AlbumCard = ({
@@ -20,11 +21,12 @@ const AlbumCard = ({
     setPlayerState,
     setCurrentTrack,
     setIsPlaying,
+    priority,
 }: Props) => {
     const handleClick = () => {
         loadCurrentAlbum(album.id)
         setCurrentTrack(album.track_list[0])
-        setPlayerState(1)
+        setPlayerState(2)
     }
 
     const buttonClick = () => {
@@ -39,9 +41,8 @@ const AlbumCard = ({
                 onClick={handleClick}
             >
                 <Image
-                    layout='responsive'
-                    height={1}
-                    width={1}
+                    height={250}
+                    width={250}
                     src={`/albumArt/${album.id}/250x250.webp`}
                     alt='album art'
                     placeholder='blur'

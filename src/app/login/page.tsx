@@ -7,7 +7,9 @@ import Page from '../components/Page'
 const Login = () => {
     const router = useRouter()
 
-    if (localStorage.loggedIn) return router.push('/')
+    React.useEffect(() => {
+        if (localStorage.loggedIn) return router.push('/')
+    }, [router])
 
     const username = 'guest'
     const password = 'password'
