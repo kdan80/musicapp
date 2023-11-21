@@ -11,7 +11,7 @@ interface Props {
 const VolumeSlider = ({ volume, setVolume, isMuted, setIsMuted }: Props) => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setVolume(parseInt(e.target.value))
-        if (volume > 0) setIsMuted(false)
+        setIsMuted(volume === 0)
     }
 
     const width = isMuted ? '0%' : `${volume}%`

@@ -20,7 +20,7 @@ interface Props {
     isMuted: boolean
     setIsMuted: Dispatch<SetStateAction<boolean>>
     volume: number
-    currentTime: number
+    trackProgress: number
     setVolume: Dispatch<SetStateAction<number>>
     setSkipToTimestamp: Dispatch<SetStateAction<number>>
     setPlayerState: Dispatch<SetStateAction<PlayerState>>
@@ -30,7 +30,7 @@ const MiniPlayer: React.FC<Props> = ({
     currentAlbum,
     currentTrack,
     setCurrentTrack,
-    currentTime,
+    trackProgress,
     isPlaying,
     setIsPlaying,
     isMuted,
@@ -77,9 +77,14 @@ const MiniPlayer: React.FC<Props> = ({
                                 {currentAlbum.artist}
                             </div>
                         </div>
-                        <div className={'hidden lg:block lg:ml-8'}>
-                            {moment(currentTime).format('m:ss')} /{' '}
-                            {moment(trackDuration).format('m:ss')}
+                        <div className={'hidden lg:ml-8 md:flex grow'}>
+                            <div className='w-10 text-center'>
+                                {moment(trackProgress * 1000).format('m:ss')}
+                            </div>
+                            <div className='w-5 text-center'>/</div>
+                            <div className='w-10 text-start'>
+                                {moment(trackDuration * 1000).format('m:ss')}
+                            </div>
                         </div>
                     </div>
 
@@ -131,7 +136,7 @@ const MiniPlayer: React.FC<Props> = ({
                     </div>
                 </div>
                 <ProgressBar
-                    currentTime={currentTime}
+                    trackProgress={trackProgress}
                     trackDuration={trackDuration}
                     setSkipToTimestamp={setSkipToTimestamp}
                 />

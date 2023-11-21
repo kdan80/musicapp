@@ -53,10 +53,15 @@ const clickedStyles = `
     max-md:shadow-[0_0_24px_#169b45]
 `
 
-const AlbumCardButton = () => {
+interface Props {
+    clickHandler: any
+}
+
+const AlbumCardButton = ({ clickHandler }: Props) => {
     const [clicked, setButtonClicked] = React.useState(false)
 
     const handleClick = () => {
+        clickHandler()
         setButtonClicked(true)
         setTimeout(() => {
             setButtonClicked(false)

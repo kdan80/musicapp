@@ -11,7 +11,7 @@ interface Props {
     loadCurrentAlbum: (albumId: string) => void
     setPlayerState: Dispatch<SetStateAction<PlayerState>>
     setCurrentTrack: Dispatch<SetStateAction<Track | null>>
-    priority: any
+    setIsPlaying: Dispatch<SetStateAction<boolean>>
 }
 
 const AlbumCard = ({
@@ -19,13 +19,17 @@ const AlbumCard = ({
     loadCurrentAlbum,
     setPlayerState,
     setCurrentTrack,
-    priority,
+    setIsPlaying,
 }: Props) => {
     const handleClick = () => {
-        console.log('ch: ')
         loadCurrentAlbum(album.id)
         setCurrentTrack(album.track_list[0])
         setPlayerState(1)
+    }
+
+    const buttonClick = () => {
+        handleClick()
+        setIsPlaying(true)
     }
 
     return (
@@ -44,7 +48,7 @@ const AlbumCard = ({
                     blurDataURL={`/albumArt/${album.id}/blurData.webp`}
                 />
                 <div className='absolute bg-[rgba(0,0,0,0)] group-hover:bg-[rgba(0,0,0,.6)] inset-0 transition-all duration-200 ease-in-out cursor-pointer' />
-                <AlbumCardButton />
+                <AlbumCardButton clickHandler={buttonClick} />
             </div>
 
             <div className='flex flex-col justify-center mt-1 text-center overflow-hidden whitespace-nowrap text-ellipsis pointer-events-none'>

@@ -19,7 +19,7 @@ interface Props {
     currentAlbum: Album
     currentTrack: Track
     setCurrentTrack: Dispatch<SetStateAction<Track | null>>
-    currentTime: number
+    trackProgress: number
     setSkipToTimestamp: Dispatch<SetStateAction<number>>
     isMuted: boolean
     setIsMuted: Dispatch<SetStateAction<boolean>>
@@ -34,7 +34,7 @@ const AudioPlayer = ({
     currentAlbum,
     currentTrack,
     setCurrentTrack,
-    currentTime,
+    trackProgress,
     setSkipToTimestamp,
     isMuted,
     setIsMuted,
@@ -97,13 +97,13 @@ const AudioPlayer = ({
                         id='trackProgress'
                         className='flex text-[.9rem] gap-6 w-full items-center'
                     >
-                        <div>{moment(currentTime).format('m:ss')}</div>
+                        <div>{moment(trackProgress * 1000).format('m:ss')}</div>
                         <ProgressBar
-                            currentTime={currentTime}
+                            trackProgress={trackProgress}
                             trackDuration={currentTrack.duration}
                             setSkipToTimestamp={setSkipToTimestamp}
                         />
-                        <div>{moment(currentTrack.duration).format('m:ss')}</div>
+                        <div>{moment(currentTrack.duration * 1000).format('m:ss')}</div>
                     </div>
 
                     <div className={'flex items-center md:justify-between md:gap-8 justify-center'}>
@@ -145,6 +145,7 @@ const AudioPlayer = ({
                     currentTrack={currentTrack}
                     setCurrentTrack={setCurrentTrack}
                     setShowTrackList={setShowTrackList}
+                    setIsPlaying={setIsPlaying}
                 />
             </div>
 
@@ -155,6 +156,7 @@ const AudioPlayer = ({
                     currentTrack={currentTrack}
                     setCurrentTrack={setCurrentTrack}
                     setShowTrackList={setShowTrackList}
+                    setIsPlaying={setIsPlaying}
                 />
             </div>
         </div>

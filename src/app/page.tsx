@@ -11,6 +11,7 @@ import useCurrentTrack from './hooks/useCurrentTrack'
 import usePlayerVolume from './hooks/usePlayerVolume'
 import usePlayerIsPlaying from './hooks/usePlayeIsPlaying'
 import AudioPlayer from './components/AudioPlayer'
+import useTrackProgress from './hooks/useTrackProgress'
 
 export type PlayerState = 0 | 1 | 2
 
@@ -24,25 +25,14 @@ export default function Home() {
     const { currentTrack, currentTrackSrc, setCurrentTrack } = useCurrentTrack()
     const { isMuted, setIsMuted, volume, setVolume } = usePlayerVolume()
     const { isPlaying, setIsPlaying } = usePlayerIsPlaying()
-    const ref = React.useRef<HTMLAudioElement | null>(null)
-
-    const [currentTime, setCurrentTime] = React.useState(0)
-    const [skipToTimestamp, setSkipToTimestamp] = React.useState(0)
-    //const [isPlaying, setIsPlaying] = React.useState(false)
+    const { trackProgress, setTrackProgress, skipToTimestamp, setSkipToTimestamp } =
+        useTrackProgress()
 
     React.useEffect(() => {
         showFullPlayer
             ? document.body.classList.add('overflow-hidden')
             : document.body.classList.remove('overflow-hidden')
     }, [showFullPlayer])
-
-    const play = () => {
-        if (ref.current && !isPlaying) return ref.current.play()
-    }
-
-    const pause = () => {
-        if (ref.current && isPlaying) return ref.current.pause()
-    }
 
     return (
         <main className='flex min-h-screen flex-col bg-[#101010] text-white'>
@@ -63,7 +53,8 @@ export default function Home() {
                                 loadCurrentAlbum={loadCurrentAlbum}
                                 setPlayerState={setPlayerState}
                                 setCurrentTrack={setCurrentTrack}
-                                priority={index < 30}
+                                setIsPlaying={setIsPlaying}
+                                // priority={index < 30}
                             />
                         ))}
                     </div>
@@ -81,7 +72,7 @@ export default function Home() {
                         currentTrack={currentTrack}
                         setCurrentTrack={setCurrentTrack}
                         setPlayerState={setPlayerState}
-                        currentTime={currentTime}
+                        trackProgress={trackProgress}
                         setSkipToTimestamp={setSkipToTimestamp}
                         isMuted={isMuted}
                         setIsMuted={setIsMuted}
@@ -103,7 +94,7 @@ export default function Home() {
                         currentAlbum={currentAlbum}
                         currentTrack={currentTrack}
                         setCurrentTrack={setCurrentTrack}
-                        currentTime={currentTime}
+                        trackProgress={trackProgress}
                         isPlaying={isPlaying}
                         setIsPlaying={setIsPlaying}
                         isMuted={isMuted}
@@ -117,11 +108,18 @@ export default function Home() {
             </div>
 
             {/* This audio player is hidden. The code above is used for the UI */}
-            {currentAlbum && currentTrackSrc && (
+            {currentAlbum && currentTrackSrc && currentTrack && (
                 <AudioPlayer
                     currentTrackSrc={currentTrackSrc}
+                    currentAlbum={currentAlbum}
+                    currentTrack={currentTrack}
+                    setCurrentTrack={setCurrentTrack}
+                    setIsPlaying={setIsPlaying}
                     isPlaying={isPlaying}
                     isMuted={isMuted}
+                    volume={volume}
+                    setTrackProgress={setTrackProgress}
+                    skipToTimestamp={skipToTimestamp}
                 />
             )}
         </main>
