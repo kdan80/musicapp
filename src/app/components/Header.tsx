@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header className='w-full bg-[#202020] py-4 px-8 md:px-12'>
             <div className='flex items-center justify-between'>
-                <div className='font-[1.1rem] font-semibold text-[#169b45]'>MusicApp</div>
+                <div className='text-[1.1rem] font-semibold text-[#169b45]'>MusicApp</div>
                 <button
                     className='flex items-center gap-4 '
                     title='user'

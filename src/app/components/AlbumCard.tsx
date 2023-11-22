@@ -12,7 +12,6 @@ interface Props {
     setPlayerState: Dispatch<SetStateAction<PlayerState>>
     setCurrentTrack: Dispatch<SetStateAction<Track | null>>
     setIsPlaying: Dispatch<SetStateAction<boolean>>
-    priority: boolean
 }
 
 const AlbumCard = ({
@@ -21,12 +20,11 @@ const AlbumCard = ({
     setPlayerState,
     setCurrentTrack,
     setIsPlaying,
-    priority,
 }: Props) => {
     const handleClick = () => {
         loadCurrentAlbum(album.id)
         setCurrentTrack(album.track_list[0])
-        setPlayerState(2)
+        setPlayerState(1)
     }
 
     const buttonClick = () => {

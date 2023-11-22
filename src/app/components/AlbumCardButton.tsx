@@ -54,7 +54,7 @@ const clickedStyles = `
 `
 
 interface Props {
-    clickHandler: any
+    clickHandler: () => void
 }
 
 const AlbumCardButton = ({ clickHandler }: Props) => {

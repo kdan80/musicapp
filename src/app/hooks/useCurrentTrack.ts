@@ -14,7 +14,7 @@ const useCurrentTrack = () => {
     const [currentTrackSrc, setCurrentTrackSrc] = React.useState<string | null>(null)
 
     React.useEffect(() => {
-        // prettier-ignore
+        // prettier - ignore
         ;(async () => {
             try {
                 if (!currentTrack) return
