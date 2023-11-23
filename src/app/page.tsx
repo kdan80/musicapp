@@ -54,7 +54,6 @@ export default function Home() {
                                 setPlayerState={setPlayerState}
                                 setCurrentTrack={setCurrentTrack}
                                 setIsPlaying={setIsPlaying}
-                                priority={index < 30}
                             />
                         ))}
                     </div>

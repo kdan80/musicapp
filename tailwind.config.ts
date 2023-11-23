@@ -14,8 +14,7 @@ const config: Config = {
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
             },
             fontFamily: {
-                //poppins: ['var(--font-poppins)'],
-                poppins: ['sans'],
+                poppins: ['var(--font-poppins)'],
             },
             spacing: {
                 'card-mob': 'calc((1 / 2 * 100%) - (1.5rem * 1 / 2))',

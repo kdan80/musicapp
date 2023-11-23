@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import Page from '../components/Page'
 
 const Login = () => {
     const router = useRouter()
@@ -25,7 +24,7 @@ const Login = () => {
     }
 
     return (
-        <Page>
+        <main className='min-h-screen max-w-screen overflow-x-hidden'>
             <div className='h-screen min-h-screen flex justify-center items-center overflow-hidden'>
                 <div className='h-full w-full fixed top-0 left-0 bg-[#181818] -z-10 background' />
                 <div className='w-full md:w-[500px] px-12 py-16 overflow-clip text-white md:bg-[rgba(15,15,15,.9)] md:backdrop-blur-sm md:rounded-lg md:shadow-[0_1px_16px_rgba(0,0,0,.2),0_2px_32px_rgba(0,0,0,.1)]'>
@@ -71,7 +70,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-        </Page>
+        </main>
     )
 }
 
