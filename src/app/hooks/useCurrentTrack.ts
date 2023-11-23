@@ -18,7 +18,7 @@ const useCurrentTrack = () => {
         ;(async () => {
             try {
                 if (!currentTrack) return
-                const response = await axios.get(`http://192.168.1.21:3000/api/${currentTrack.id}`)
+                const response = await axios.get(`/api/${currentTrack.id}`)
                 setCurrentTrackSrc(response.data.url)
             } catch (err) {
                 console.log(err)
